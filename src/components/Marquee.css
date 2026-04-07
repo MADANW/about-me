@@ -1,0 +1,92 @@
+:root {
+  --marquee-duration: 20s;
+}
+
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  padding: 0.25rem;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-vertical {
+  flex-direction: column;
+  height: 400px;
+}
+
+.marquee-content {
+  display: flex;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: marquee;
+  animation-duration: var(--marquee-duration);
+  gap: 0.1rem;
+}
+
+.marquee-vertical .marquee-content {
+  flex-direction: column;
+  animation-name: marquee-vertical;
+}
+
+.marquee-reverse {
+  animation-direction: reverse;
+}
+
+.marquee-animate-vertical {
+  justify-content: space-around;
+}
+
+.marquee-pause-on-hover:hover {
+  animation-play-state: paused;
+}
+
+.marquee-content-item {
+  flex-shrink: 0;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: 0.1rem;
+  align-items: center;
+}
+
+.marquee-vertical .marquee-content-item {
+  min-height: 100%;
+  width: 100%;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* Add a shimmer effect to the marquee content */
+.marquee-content-item:hover {
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+} 

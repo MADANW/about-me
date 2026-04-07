@@ -1,0 +1,41 @@
+.hyper-text {
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-family: var(--typewriter-font-alt);
+  overflow: hidden;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.hyper-text-letter {
+  display: inline-block;
+  font-family: inherit;
+  transition: color 0.2s ease;
+}
+
+.hyper-text-space {
+  width: 0.5em;
+}
+
+/* Adding animation flash effect */
+.hyper-text:hover .hyper-text-letter {
+  color: var(--accent-color);
+  animation: flash-text 0.2s ease forwards;
+}
+
+@keyframes flash-text {
+  0% {
+    color: var(--accent-color);
+  }
+  100% {
+    color: var(--text-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .hyper-text {
+    font-size: 2rem;
+  }
+} 
