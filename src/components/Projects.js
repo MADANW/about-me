@@ -30,23 +30,26 @@ const Projects = () => {
     {
       title: "NEO Observer",
       description: "An interactive data science app exploring near-Earth asteroid data via NASA's NeoWs API, featuring EDA, visualizations, hazard classification, and a Streamlit dashboard.",
+      imageUrl: "/NEO.jpg",
       repoUrl: "https://github.com/MADANW/NEO-Observer",
       tags: ["Python", "Streamlit", "Scikit-learn", "NASA API"],
-      featured: false
+      featured: true
     },
     {
       title: "Algorithmic Trading Bot",
       description: "A hybrid AI trading system using the Claude API for morning market bias analysis, with automated trade execution, position sizing, and risk management via Alpaca.",
+      imageUrl: "/algo-bot.png",
       repoUrl: "https://github.com/MADANW/algo-bot",
       tags: ["Python", "TypeScript", "Claude API", "Next.js", "Alpaca"],
-      featured: false
+      featured: true
     },
     {
       title: "Expert Advisors Testing",
       description: "A personal log of MQL5 Expert Advisors and MetaTrader 5 backtesting results, documenting Bollinger Band scalping and EMA crossover trend-following strategies.",
+      imageUrl: "/EA.png",
       repoUrl: "https://github.com/MADANW/EA-tests",
       tags: ["MQL5", "MetaTrader 5", "Algorithmic Trading", "Forex"],
-      featured: false
+      featured: true
     }
   ];
 
