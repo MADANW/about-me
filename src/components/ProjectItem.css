@@ -1,0 +1,215 @@
+.project-item-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+/* ── Full-size card ── */
+.project-item {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  position: relative;
+  min-height: 400px;
+}
+
+.project-item .hover-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: 1;
+}
+
+.project-item-link:hover .project-item:not(.compact) {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: var(--terminal-green);
+}
+
+.project-item-link:hover .hover-background {
+  transform: translateX(0);
+}
+
+.project-content-wrapper {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+.project-item-link:hover .project-content-wrapper {
+  opacity: 0;
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  padding: 0;
+  transition: transform 0.5s ease;
+  max-height: 200px;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-bg);
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-content h3 {
+  margin: 0 0 0.75rem;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-family: var(--heading-font);
+  font-weight: 600;
+}
+
+.project-content p {
+  margin: 0 0 1rem;
+  color: var(--secondary-color);
+  line-height: 1.6;
+  font-family: var(--body-font);
+  font-size: 0.95rem;
+}
+
+.hover-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--bg-color);
+  font-family: var(--typewriter-font);
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: translateY(10px);
+}
+
+.project-item-link:hover .hover-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Compact card ── */
+.project-item.compact {
+  min-height: unset;
+  padding: 1.1rem 1.25rem;
+  border-radius: 8px;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.project-item-link:hover .project-item.compact {
+  border-color: var(--terminal-green);
+  background: rgba(110, 231, 183, 0.05);
+  transform: translateY(-2px);
+}
+
+.compact-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.compact-prompt {
+  color: var(--terminal-green);
+  font-family: var(--body-font);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.compact-title {
+  font-family: var(--body-font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.compact-arrow {
+  flex-shrink: 0;
+  color: var(--secondary-color);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.project-item-link:hover .compact-arrow {
+  opacity: 1;
+  color: var(--terminal-green);
+}
+
+.compact-description {
+  font-family: var(--body-font);
+  font-size: 0.82rem;
+  color: var(--secondary-color);
+  line-height: 1.5;
+  margin: 0 0 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Tag pills (shared) ── */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.project-tag {
+  font-family: var(--body-font);
+  font-size: 0.72rem;
+  color: var(--secondary-color);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  letter-spacing: 0.3px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.project-item-link:hover .project-tag {
+  border-color: var(--terminal-green);
+  color: var(--terminal-green);
+}

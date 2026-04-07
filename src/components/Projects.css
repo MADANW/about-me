@@ -1,0 +1,52 @@
+.projects {
+  padding: 0;
+  background: transparent;
+}
+
+.projects-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.projects h2 {
+  text-align: left;
+  color: var(--terminal-green);
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+  font-family: var(--heading-font);
+  font-weight: 400;
+}
+
+/* Featured: 2-column grid of full cards */
+.projects-featured {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Compact: 3-4 column grid of small terminal-style cards */
+.projects-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .projects-featured {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects h2 {
+    font-size: 1.75rem;
+  }
+
+  .projects-compact-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
