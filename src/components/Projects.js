@@ -36,7 +36,7 @@ const Projects = () => {
       featured: true
     },
     {
-      title: "Algorithmic Trading Bot",
+      title: "AI Trading Bot",
       description: "A hybrid AI trading system using the Claude API for morning market bias analysis, with automated trade execution, position sizing, and risk management via Alpaca.",
       imageUrl: "/algo-bot.png",
       repoUrl: "https://github.com/MADANW/algo-bot",
