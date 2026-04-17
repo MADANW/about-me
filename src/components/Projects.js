@@ -21,13 +21,6 @@ const Projects = () => {
       featured: true
     },
     {
-      title: "Credit Risk & Spending Trends Dashboard",
-      description: "A financial intelligence report for consumer behavior analysis and loan risk prediction.",
-      repoUrl: "https://github.com/MADANW/credit-risk-dashboard",
-      tags: ["Python", "Pandas", "Data Analysis"],
-      featured: false
-    },
-    {
       title: "NEO Observer",
       description: "An interactive data science app exploring near-Earth asteroid data via NASA's NeoWs API, featuring EDA, visualizations, hazard classification, and a Streamlit dashboard.",
       imageUrl: "/NEO.jpg",
@@ -50,6 +43,13 @@ const Projects = () => {
       repoUrl: "https://github.com/MADANW/EA-tests",
       tags: ["MQL5", "MetaTrader 5", "Algorithmic Trading", "Forex"],
       featured: true
+    },
+    {
+      title: "Credit Risk & Spending Trends Dashboard",
+      description: "A financial intelligence report for consumer behavior analysis and loan risk prediction.",
+      repoUrl: "https://github.com/MADANW/credit-risk-dashboard",
+      tags: ["Python", "Pandas", "Data Analysis"],
+      featured: false
     }
   ];
 
@@ -59,9 +59,16 @@ const Projects = () => {
   return (
     <section className="projects">
       <div className="projects-container">
-        <h2>$ ls ~/projects/</h2>
+        <header className="projects-header">
+          <h2>
+            <span className="projects-prompt">$</span> ls ~/projects/
+            <span className="projects-cursor" aria-hidden="true" />
+          </h2>
+          <p className="projects-subtitle">
+            # {featuredProjects.length} featured · {otherProjects.length} archived
+          </p>
+        </header>
 
-        {/* Featured Projects */}
         <div className="projects-featured">
           {featuredProjects.map((project, index) => (
             <ProjectItem
@@ -76,20 +83,24 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Compact Project Grid */}
         {otherProjects.length > 0 && (
-          <div className="projects-compact-grid">
-            {otherProjects.map((project, index) => (
-              <ProjectItem
-                key={index}
-                title={project.title}
-                description={project.description}
-                repoUrl={project.repoUrl}
-                tags={project.tags}
-                compact={true}
-              />
-            ))}
-          </div>
+          <>
+            <h3 className="projects-subheading">
+              <span className="projects-prompt">&gt;</span> archive/
+            </h3>
+            <div className="projects-compact-grid">
+              {otherProjects.map((project, index) => (
+                <ProjectItem
+                  key={index}
+                  title={project.title}
+                  description={project.description}
+                  repoUrl={project.repoUrl}
+                  tags={project.tags}
+                  compact={true}
+                />
+              ))}
+            </div>
+          </>
         )}
       </div>
     </section>
