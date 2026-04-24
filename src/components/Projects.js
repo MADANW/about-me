@@ -13,11 +13,11 @@ const Projects = () => {
       featured: true
     },
     {
-      title: "Algorithmic Trading Bot",
-      description: "An algorithmic trading bot that uses machine learning to analyze market patterns and make trading decisions.",
-      imageUrl: "/dashboard.png",
-      repoUrl: "https://github.com/MADANW/stock-predictor",
-      tags: ["Python", "TensorFlow", "Pandas", "Finance"],
+      title: "ReadMe",
+      description: "This is my readme. I'm using it as placeholder for an upcomming more LLM focused project. Stay tuned!",
+      imageUrl: "/under-construction.jpg",
+      repoUrl: "https://github.com/MADANW/MADANW",
+      tags: ["Stay tuned!"],
       featured: true
     },
     {
